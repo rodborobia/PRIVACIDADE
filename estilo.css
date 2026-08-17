@@ -1,0 +1,164 @@
+/* AdvogaJá — páginas institucionais
+   Sobriedade e discrição são requisito normativo (Prov. OAB 205/2021, art. 3º). */
+
+:root{
+  --navy:#0E1929;
+  --navy-2:#1B2A4A;
+  --gold:#C9A84C;
+  --paper:#FBFAF7;
+  --rule:#E2DED4;
+  --ink:#1A1D22;
+  --ink-2:#535A66;
+  --max:720px;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Cabeçalho */
+.topo{background:var(--navy);color:#fff}
+.topo-int{max-width:var(--max);margin:0 auto;padding:22px 24px 0}
+.marca{
+  display:inline-block;text-decoration:none;color:#fff;
+  font-family:"Spectral",Georgia,"Times New Roman",serif;
+  font-size:27px;font-weight:600;letter-spacing:-.01em;line-height:1;
+}
+.marca em{font-style:normal;color:var(--gold)}
+.marca-sub{
+  display:block;margin-top:6px;
+  font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;
+  color:rgba(255,255,255,.62);font-weight:500;
+}
+
+nav{max-width:var(--max);margin:0 auto;padding:20px 24px 22px}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 22px}
+nav a{
+  color:rgba(255,255,255,.78);text-decoration:none;
+  font-size:13.5px;letter-spacing:.02em;
+  padding:4px 0;display:inline-block;
+  border-bottom:1px solid transparent;
+}
+nav a:hover{color:#fff;border-bottom-color:var(--gold)}
+nav a[aria-current="page"]{color:#fff;border-bottom-color:var(--gold)}
+
+/* Corpo */
+main{max-width:var(--max);margin:0 auto;padding:52px 24px 12px}
+
+.rotulo{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin:0 0 14px;
+}
+
+h1{
+  font-family:"Spectral",Georgia,serif;
+  font-size:40px;line-height:1.14;font-weight:600;
+  letter-spacing:-.018em;margin:0 0 20px;color:var(--navy);
+}
+.entrada{font-size:19px;line-height:1.6;color:var(--ink-2);margin:0 0 40px;max-width:60ch}
+
+h2{
+  font-family:"Spectral",Georgia,serif;
+  font-size:24px;line-height:1.3;font-weight:600;
+  margin:48px 0 14px;color:var(--navy);letter-spacing:-.01em;
+}
+h3{font-size:16px;font-weight:650;margin:32px 0 8px;color:var(--navy)}
+p{margin:0 0 17px;max-width:66ch}
+a{color:var(--navy-2)}
+a:hover{color:var(--gold)}
+strong{font-weight:650}
+
+hr.fio{border:0;border-top:1px solid var(--rule);margin:44px 0}
+
+ul.lista{margin:0 0 18px;padding:0;list-style:none;max-width:66ch}
+ul.lista li{position:relative;padding-left:20px;margin-bottom:10px}
+ul.lista li::before{
+  content:"";position:absolute;left:0;top:.72em;
+  width:7px;height:1px;background:var(--gold);
+}
+
+/* Áreas de atuação */
+.areas{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:1px;background:var(--rule);border:1px solid var(--rule);margin:24px 0 8px;
+}
+.areas div{background:var(--paper);padding:16px 18px}
+.areas h3{margin:0 0 4px;font-size:14.5px}
+.areas p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+
+/* Etapas */
+ol.etapas{list-style:none;counter-reset:e;margin:26px 0 0;padding:0}
+ol.etapas li{
+  counter-increment:e;position:relative;
+  padding:0 0 26px 56px;border-left:1px solid var(--rule);
+  margin-left:15px;
+}
+ol.etapas li:last-child{border-left-color:transparent;padding-bottom:4px}
+ol.etapas li::before{
+  content:counter(e,decimal-leading-zero);
+  position:absolute;left:-15px;top:-2px;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--navy);color:var(--gold);
+  font-size:11.5px;font-weight:600;letter-spacing:.03em;
+  display:flex;align-items:center;justify-content:center;
+}
+ol.etapas h3{margin:2px 0 6px}
+ol.etapas p{margin:0;color:var(--ink-2);font-size:15.5px}
+
+/* Perguntas frequentes */
+details.q{border-bottom:1px solid var(--rule);padding:2px 0}
+details.q summary{
+  cursor:pointer;padding:16px 28px 16px 0;position:relative;
+  font-weight:600;font-size:16px;color:var(--navy);list-style:none;
+}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{
+  content:"+";position:absolute;right:2px;top:14px;
+  color:var(--gold);font-size:19px;font-weight:400;line-height:1;
+}
+details.q[open] summary::after{content:"–"}
+details.q summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+details.q .r{padding:0 0 18px}
+details.q .r p{font-size:15.5px;color:var(--ink-2);margin:0 0 12px}
+details.q .r p:last-child{margin:0}
+
+/* Nota destacada */
+.nota{border-left:2px solid var(--gold);padding:2px 0 2px 20px;margin:26px 0}
+.nota p{font-size:15.5px;color:var(--ink-2);margin:0}
+
+/* Documento legal */
+.clausulas{counter-reset:c}
+.clausulas h2{counter-increment:c;font-size:20px}
+.clausulas h2::before{content:counter(c) ". ";color:var(--gold);font-weight:600}
+
+/* Rodapé */
+footer{
+  background:var(--navy);color:rgba(255,255,255,.62);
+  margin-top:72px;padding:40px 0 44px;
+  font-size:13px;line-height:1.7;
+}
+.rod-int{max-width:var(--max);margin:0 auto;padding:0 24px}
+.rod-firma{color:rgba(255,255,255,.9);font-weight:600;letter-spacing:.01em}
+footer a{color:rgba(255,255,255,.72)}
+footer a:hover{color:var(--gold)}
+.rod-links{margin-top:18px;display:flex;flex-wrap:wrap;gap:6px 20px;font-size:12.5px}
+
+@media (max-width:600px){
+  body{font-size:16px}
+  h1{font-size:31px}
+  h2{font-size:21px}
+  .entrada{font-size:17.5px}
+  main{padding-top:40px}
+  ol.etapas li{padding-left:46px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
